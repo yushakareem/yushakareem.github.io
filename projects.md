@@ -19,6 +19,5 @@ a few things I'm working on or have shipped.
 </div>
 
 <div class="project">
-  <h3>project three — placeholder</h3>
-  <p>short description of what it does and why it exists.</p>
+  <h3><a href="https://yushakareem.github.io/fundar/">fundar</a></h3>
 </div>

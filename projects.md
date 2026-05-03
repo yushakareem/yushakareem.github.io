@@ -19,5 +19,5 @@ a few things I'm working on or have shipped.
 </div>
 
 <div class="project">
-  <h3><a href="https://yushakareem.github.io/fundar/">fundar</a></h3>
+  <h3><a href="https://yushakareem.github.io/dar-finder/">dar-finder</a></h3>
 </div>

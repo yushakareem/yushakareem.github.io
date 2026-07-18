@@ -93,6 +93,41 @@ a:focus-visible {
 .content h1 { font-size: 1.95rem; letter-spacing: -0.03em; margin-top: 0; }
 .content h2 { font-size: 1.15rem; margin-top: 2.5rem; }
 
+/* home identity — portrait + intro */
+.identity { display: flex; gap: 1.6rem; align-items: flex-start; margin: 0 0 2.75rem; }
+.identity-text { flex: 1; min-width: 0; }
+.identity-text h1 { margin: 0 0 0.6rem; }
+.identity-text p { margin: 0.4rem 0; font-family: var(--mono); }
+.portrait { flex: 0 0 auto; width: 220px; }
+.portrait-frame {
+  position: relative;
+  width: 220px;
+  height: 270px;
+  border-radius: 7px;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  background: var(--rule);
+}
+.portrait-frame .face, .portrait-frame .eyeball {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+:root[data-theme="dark"] .portrait-frame img { filter: brightness(0.9); }
+/* real eyes shift subtly toward the cursor within a soft mask */
+.eye {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  -webkit-mask: radial-gradient(ellipse var(--rx) var(--ry) at var(--cx) var(--cy), #000 42%, rgba(0,0,0,0) 100%);
+  mask: radial-gradient(ellipse var(--rx) var(--ry) at var(--cx) var(--cy), #000 42%, rgba(0,0,0,0) 100%);
+}
+.eyeball { transition: transform 0.12s ease-out; will-change: transform; }
+@media (max-width: 560px) { .identity { flex-direction: column; } }
+
 /* home hero — the loop (signature element) */
 .hero { margin: 0.5rem 0 2.75rem; }
 .loop {

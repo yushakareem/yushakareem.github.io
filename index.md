@@ -12,30 +12,13 @@ title: Home
     </div>
   </div>
   <div class="identity-text">
-    <h1>yusha kareem</h1>
-    <p>building things with language models, mostly. occasionally writing about what works and what doesn't.</p>
-    <p>currently exploring agentic systems — what they are, what they aren't, and where the line actually sits.</p>
+    <p>Senior Data Scientist / AI Engineer who <strong>designs and ships AI systems end-to-end, from data pipeline to working interface, making deliberate component tradeoffs under commercial constraint and explaining the whole system to non-technical stakeholders</strong>. Backed by a PhD in Autonomous Systems and 7+ years across industry and academia; over the past 4 years at Deloitte, delivered diverse AI/ML projects spanning demand forecasting, computer-vision object detection and tracking, price optimization, and most recently, RAG-based document intelligence and grounded GenAI deliverable generation.</p>
+    <p>Relevant expertise:</p>
+    <ul>
+      <li><strong>Machine Learning and MLOps:</strong> Systems design/thinking across diverse projects; ML/GenAI delivered end-to-end with MLOps principles data versioning and quality checks (e.g. Great Expectations), data processing and feature engineering, model training, registry and deployment (e.g. MLFlow on Databricks), and selection of appropriate metrics for iterative experimentation and evaluation.</li>
+      <li><strong>Cross-functional delivery:</strong> Collaborated with data engineers, data scientists and business stakeholders to ship impactful ML solutions; coached juniors while holding a senior role on a project.</li>
+      <li><strong>Stakeholder management &amp; consulting:</strong> Translate business challenges into concrete goals and manage the quick-PoC-vs-scalable-solution tradeoff; take ownership while working closely with the team to deliver quality results on time; communicate outcomes clearly to technical and non-technical audiences.</li>
+    </ul>
+    <p>Focused on AI/ML reliability, explainability, scalability and practical business impact; well-suited to build and own products that enable data-driven decision making.<span class="cursor" aria-hidden="true"></span></p>
   </div>
 </div>
-
-<div class="hero">
-  <svg class="loop" viewBox="0 0 560 120" role="img" aria-label="The agent loop: observe, then decide, then act, then repeat.">
-    <defs>
-      <marker id="loop-arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
-        <path d="M0,0 L6,3 L0,6 Z"/>
-      </marker>
-    </defs>
-    <text class="loop-label" x="78" y="28">observe</text>
-    <text class="loop-label" x="280" y="28">decide</text>
-    <text class="loop-label" x="470" y="28">act</text>
-    <line class="loop-edge" x1="140" y1="23" x2="232" y2="23" marker-end="url(#loop-arrow)"/>
-    <line class="loop-edge" x1="330" y1="23" x2="432" y2="23" marker-end="url(#loop-arrow)"/>
-    <path class="loop-edge" d="M470,40 L470,92 L78,92 L78,40" marker-end="url(#loop-arrow)"/>
-  </svg>
-  <p class="hero-tagline">the loop is not the agent.<span class="cursor" aria-hidden="true"></span></p>
-</div>
-
-## elsewhere
-
-- [github](https://github.com/yushakareem)
-- [email](mailto:syedyusha@gmail.com)

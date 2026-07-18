@@ -1,5 +1,9 @@
 <nav class="nav">
+  {% if page.url == '/' %}
+  <h1 class="nav-brand-h1"><a href="{{ '/' | relative_url }}" class="nav-brand">yusha kareem</a></h1>
+  {% else %}
   <a href="{{ '/' | relative_url }}" class="nav-brand">yusha kareem</a>
+  {% endif %}
   <ul class="nav-links">
     <li><a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="active" aria-current="page"{% endif %}>home</a></li>
     <li><a href="{{ '/projects/' | relative_url }}"{% if page.url contains '/projects' %} class="active" aria-current="page"{% endif %}>projects</a></li>

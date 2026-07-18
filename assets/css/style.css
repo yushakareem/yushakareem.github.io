@@ -59,6 +59,7 @@ a:focus-visible {
   flex-wrap: wrap;
   gap: 1rem;
 }
+.nav-brand-h1 { margin: 0; font: inherit; }
 .nav-brand { text-decoration: none; font-weight: 600; letter-spacing: -0.02em; }
 .nav-links { list-style: none; display: flex; align-items: center; gap: 1.25rem; margin: 0; padding: 0; }
 .nav-links a { text-decoration: none; color: var(--muted); }
@@ -95,6 +96,7 @@ a:focus-visible {
 
 /* home identity — floated portrait, summary wraps around it */
 .identity { margin: 0 0 2.75rem; }
+.identity-text { text-align: justify; hyphens: auto; }
 .identity::after { content: ""; display: block; clear: both; }
 .identity-text p, .identity-text li { margin: 0.75rem 0; font-family: var(--mono); }
 .identity-text > :first-child { margin-top: 0; }

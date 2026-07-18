@@ -9,6 +9,11 @@ permalink: /blog/:year/:month/:day/:title/
 markdown: kramdown
 highlighter: rouge
 
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap
+
 exclude:
   - README.md
   - CLAUDE.md

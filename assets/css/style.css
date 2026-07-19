@@ -131,6 +131,20 @@ a:focus-visible {
 .eyeball { transition: transform 0.12s ease-out; will-change: transform; }
 @media (max-width: 560px) { .portrait { float: none; margin: 0 0 1.25rem; } }
 
+/* cv page — text */
+.cv-subtitle { margin: 0.35rem 0 0.1rem; }
+.cv-meta { margin: 0 0 0.5rem; color: var(--muted); font-size: 0.85rem; }
+.cv h2 { margin-top: 2.75rem; padding-bottom: 0.35rem; border-bottom: 1px solid var(--rule); }
+.cv-tags { color: var(--muted); }
+.cv-job { margin: 1.4rem 0; }
+.cv-job-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.15rem 1rem; }
+.cv-role { font-weight: 600; }
+.cv-client { font-weight: 400; color: var(--muted); }
+.cv-when { color: var(--muted); font-size: 0.82rem; white-space: nowrap; }
+.cv-stack { margin: 0.3rem 0 0.4rem; color: var(--muted); font-size: 0.82rem; }
+.cv-job ul { margin: 0.4rem 0 0; padding-left: 1.1rem; }
+.cv-job li { margin: 0.3rem 0; }
+
 /* blinking cursor */
 .cursor {
   display: inline-block;

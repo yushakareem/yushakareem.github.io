@@ -6,6 +6,7 @@
   {% endif %}
   <ul class="nav-links">
     <li><a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="active" aria-current="page"{% endif %}>home</a></li>
+    <li><a href="{{ '/cv/' | relative_url }}"{% if page.url contains '/cv' %} class="active" aria-current="page"{% endif %}>cv</a></li>
     <li><a href="{{ '/projects/' | relative_url }}"{% if page.url contains '/projects' %} class="active" aria-current="page"{% endif %}>projects</a></li>
     <li><a href="{{ '/blog/' | relative_url }}"{% if page.url contains '/blog' %} class="active" aria-current="page"{% endif %}>writing</a></li>
     <li>

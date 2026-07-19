@@ -22,7 +22,7 @@ permalink: /cv/
 <p class="cv-tags">Python · Databricks · CI/CD (DevOps) · Pandas · MLFlow · Streamlit · Terraform · uv · SQL · LangGraph · RAG · Docker · Git · Docling · Azure (DevOps/ML) · GCP · Vertex AI · Scrum/Agile · scikit-learn · Great Expectations · Double Diamond · Three-lens business strategy</p>
 
 <h2>languages</h2>
-<p class="cv-tags">English (native) · Urdu (native) · Italian (intermediate) · Arabic (intermediate) · Dutch (beginner) · French (beginner)</p>
+<p class="cv-tags">English (native) · Urdu (native) · Italian (beginner) · Arabic (beginner) · Dutch (beginner) · French (beginner)</p>
 
 <h2>strengths</h2>
 <p class="cv-tags">Takes ownership of initiatives · Data science, MLOps, GenAI &amp; applied research · Feedback &amp; growth mindset · Delivers technical insight to non-technical stakeholders · Published researcher (4 articles in AI &amp; robotics)</p>

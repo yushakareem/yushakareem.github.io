@@ -68,8 +68,13 @@
       function move(e) {
         var r = frame.getBoundingClientRect();
         var cx = r.left + r.width / 2, cy = r.top + r.height * 0.224;
-        var dx = Math.max(-1, Math.min(1, (e.clientX - cx) / (window.innerWidth * 0.5)));
-        var dy = Math.max(-1, Math.min(1, (e.clientY - cy) / (window.innerHeight * 0.5)));
+        // Normalize by the distance to the edge the cursor is heading toward, so
+        // the eyes reach full deflection on every side even though the portrait
+        // sits off-center (to the left) on the page.
+        var denomX = (e.clientX < cx ? cx : window.innerWidth - cx) || 1;
+        var denomY = (e.clientY < cy ? cy : window.innerHeight - cy) || 1;
+        var dx = Math.max(-1, Math.min(1, (e.clientX - cx) / denomX));
+        var dy = Math.max(-1, Math.min(1, (e.clientY - cy) / denomY));
         var t = 'translate(' + (dx * MX).toFixed(2) + 'px,' + (dy * MY).toFixed(2) + 'px)';
         balls.forEach(function (b) { b.style.transform = t; });
       }

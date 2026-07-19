@@ -7,12 +7,10 @@ permalink: /cv/
 <div class="cv">
 
 <h1>yusha kareem</h1>
-<p class="cv-subtitle">Senior Data Scientist — ML, GenAI Engineering &amp; Stakeholder collaboration</p>
+<p class="cv-subtitle">Senior Data Scientist | AI Engineer</p>
 <p class="cv-meta">Amsterdam, Netherlands</p>
 
-<h2>summary</h2>
-
-<p>Senior Data Scientist / AI Engineer who <strong>designs and ships AI systems end-to-end, from data pipeline to working interface</strong>, making deliberate component tradeoffs under commercial constraint and explaining the whole system to non-technical stakeholders. Backed by a PhD in Autonomous Systems and 7+ years across industry and academia; over the past 4 years at Deloitte, delivered diverse AI/ML projects spanning demand forecasting, computer-vision object detection and tracking, price optimization, and most recently RAG-based document intelligence and grounded GenAI deliverable generation.</p>
+<h2>relevant expertise</h2>
 
 <ul>
   <li><strong>Machine Learning &amp; MLOps:</strong> systems design across diverse projects; ML/GenAI delivered end-to-end with data versioning and quality checks (Great Expectations), feature engineering, training, registry and deployment (MLFlow on Databricks), and metric selection for iterative evaluation.</li>

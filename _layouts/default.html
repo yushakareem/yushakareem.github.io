@@ -22,6 +22,7 @@
 <body>
   <div class="page">
     {% include nav.html %}
+    <aside class="rail"></aside>
     <main class="content {% if page.layout == 'post' %}prose{% endif %}">
       {{ content }}
     </main>
@@ -53,6 +54,59 @@
         try { localStorage.setItem('theme', next); } catch (e) {}
         sync();
       });
+    })();
+  </script>
+  <script>
+    // Section rail: a pipeline-style trace of the page. Built from headings /
+    // [data-rail] sections; nodes fill in as the reader scrolls past them.
+    (function () {
+      var rail = document.querySelector('.rail');
+      var main = document.querySelector('main.content');
+      if (!rail || !main) return;
+      var heads = [].slice.call(main.querySelectorAll('h2[id], [data-rail][id]'));
+      if (heads.length < 2) { rail.classList.add('rail-empty'); return; }
+
+      var list = document.createElement('ol');
+      list.className = 'rail-list';
+      var items = heads.map(function (h) {
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '#' + h.id;
+        a.textContent = (h.getAttribute('data-rail') || h.textContent).trim().toLowerCase();
+        li.appendChild(a);
+        list.appendChild(li);
+        return li;
+      });
+      var nav = document.createElement('nav');
+      nav.className = 'rail-nav';
+      nav.setAttribute('aria-label', 'On this page');
+      var label = document.createElement('p');
+      label.className = 'rail-label';
+      label.textContent = 'on this page';
+      nav.appendChild(label);
+      nav.appendChild(list);
+      rail.appendChild(nav);
+
+      var ticking = false;
+      function update() {
+        ticking = false;
+        var idx = 0;
+        for (var i = 0; i < heads.length; i++) {
+          if (heads[i].getBoundingClientRect().top <= 140) idx = i;
+        }
+        if (window.innerHeight + window.pageYOffset >= document.documentElement.scrollHeight - 4) {
+          idx = heads.length - 1;
+        }
+        items.forEach(function (li, i) {
+          li.classList.toggle('is-active', i === idx);
+          li.classList.toggle('is-done', i < idx);
+        });
+        list.style.setProperty('--rail-progress', (items[idx].offsetTop + items[idx].offsetHeight / 2) + 'px');
+      }
+      function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll, { passive: true });
+      update();
     })();
   </script>
   <script>

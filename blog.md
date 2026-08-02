@@ -6,6 +6,8 @@ permalink: /blog/
 
 # writing
 
+<aside class="note">also available as an <a href="{{ '/feed.xml' | relative_url }}">rss feed</a></aside>
+
 <ul class="post-list">
   {% for post in site.posts %}
     <li>

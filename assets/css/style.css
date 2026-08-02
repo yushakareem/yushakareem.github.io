@@ -39,17 +39,24 @@ a:focus-visible {
   border-radius: 2px;
 }
 
+/* three-track canvas: section rail | content | margin notes */
 .page {
-  max-width: 680px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 3rem 1.5rem 4rem;
-  display: flex;
-  flex-direction: column;
+  padding: 3rem 2rem 4rem;
   min-height: 100vh;
+  display: grid;
+  grid-template-columns: 200px minmax(0, 680px) 220px;
+  grid-template-rows: auto 1fr auto;
+  justify-content: center;
+  column-gap: 3rem;
 }
+
+[id] { scroll-margin-top: 2.5rem; }
 
 /* nav */
 .nav {
+  grid-column: 1 / -1;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -88,10 +95,80 @@ a:focus-visible {
   border-radius: 2px;
 }
 
+/* section rail — a pipeline-style trace of the page, built by default.html */
+.rail { grid-column: 1; grid-row: 2; }
+.rail.rail-empty { visibility: hidden; }
+.rail-nav { position: sticky; top: 3rem; }
+.rail-label {
+  margin: 0 0 0.9rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+.rail-list { list-style: none; margin: 0; padding: 0; position: relative; }
+.rail-list::before {
+  content: "";
+  position: absolute;
+  left: 3.5px;
+  top: 6px;
+  bottom: 6px;
+  width: 1px;
+  background: var(--rule);
+}
+/* accent edge grows to the active node as sections complete */
+.rail-list::after {
+  content: "";
+  position: absolute;
+  left: 3.5px;
+  top: 6px;
+  width: 1px;
+  height: calc(var(--rail-progress, 6px) - 6px);
+  max-height: calc(100% - 12px);
+  background: var(--accent);
+}
+.rail-list li { position: relative; padding: 0.28rem 0 0.28rem 1.15rem; }
+.rail-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1px solid var(--muted);
+}
+.rail-list li.is-done::before,
+.rail-list li.is-active::before { background: var(--accent); border-color: var(--accent); }
+.rail-list li.is-active::before { box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent); }
+.rail-list a { text-decoration: none; color: var(--muted); font-size: 0.78rem; }
+.rail-list a:hover { color: var(--accent); }
+.rail-list li.is-active a { color: var(--fg); }
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+  .rail-list::after { transition: height 0.25s ease; }
+}
+
+/* margin notes — annotations that live in the right track */
+.note {
+  float: right;
+  clear: right;
+  width: 220px;
+  margin: 0.25rem calc(-220px - 3rem) 0.9rem 1rem;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.note a { color: inherit; }
+.note-when { display: block; color: var(--fg); }
+.note-stack { display: block; margin-top: 0.3rem; }
+
 /* content */
-.content { flex: 1; }
+.content { grid-column: 2; grid-row: 2; flex: 1; }
 .content h1, .content h2, .content h3 { font-family: var(--mono); font-weight: 600; letter-spacing: -0.02em; }
-.content h1 { font-size: 1.95rem; letter-spacing: -0.03em; margin-top: 0; }
+.content h1 { font-size: 2.1rem; letter-spacing: -0.03em; margin-top: 0; }
 .content h2 { font-size: 1.15rem; margin-top: 2.5rem; }
 
 /* home identity — floated portrait, summary wraps around it */
@@ -140,8 +217,6 @@ a:focus-visible {
 .cv-job-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.15rem 1rem; }
 .cv-role { font-weight: 600; }
 .cv-client { font-weight: 400; color: var(--muted); }
-.cv-when { color: var(--muted); font-size: 0.82rem; white-space: nowrap; }
-.cv-stack { margin: 0.3rem 0 0.4rem; color: var(--muted); font-size: 0.82rem; }
 .cv-job ul { margin: 0.4rem 0 0; padding-left: 1.1rem; }
 .cv-job li { margin: 0.3rem 0; }
 
@@ -160,7 +235,7 @@ a:focus-visible {
 @keyframes blink { 50% { opacity: 0; } }
 
 /* long-form post body uses serif */
-.prose article > *:not(.post-header):not(pre):not(code):not(.callout) {
+.prose article > *:not(.post-header):not(pre):not(code):not(.callout):not(.note) {
   font-family: var(--serif);
   font-size: 1.0625rem;
   line-height: 1.75;
@@ -190,6 +265,7 @@ pre code { background: none; padding: 0; }
 
 /* footer */
 .footer {
+  grid-column: 1 / -1;
   margin-top: 4rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--rule);
@@ -203,3 +279,26 @@ pre code { background: none; padding: 0; }
 .footer a { color: var(--muted); }
 .footer-links { display: flex; gap: 1.25rem; }
 .footer-links a:hover { color: var(--accent); }
+
+/* no room for the margin track: notes fold into the flow as small asides */
+@media (max-width: 1200px) {
+  .page { grid-template-columns: 200px minmax(0, 680px); }
+  .note {
+    float: none;
+    width: auto;
+    margin: 1rem 0;
+    padding: 0.4rem 0 0.4rem 0.85rem;
+    border-left: 2px solid var(--rule);
+  }
+}
+
+/* no room for the rail: back to the single column */
+@media (max-width: 940px) {
+  .page {
+    display: flex;
+    flex-direction: column;
+    max-width: 680px;
+    padding: 3rem 1.5rem 4rem;
+  }
+  .rail { display: none; }
+}

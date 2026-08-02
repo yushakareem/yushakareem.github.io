@@ -31,19 +31,21 @@ Personal site for Yusha Kareem. Hosted on GitHub Pages at `https://yushakareem.g
 
 ## Pages
 
-1. **Home (`index.md`)** — Name, one-line tagline, short intro paragraph, links to Projects / Writing / GitHub / Email.
-2. **Projects (`projects.md`)** — List of project cards. Placeholder cards for now.
+1. **Home (`index.md`)** — Eye-tracking portrait + intro paragraph (`#intro`), then `now` and `elsewhere` sections. tl;dr and current-role margin notes.
+2. **Projects (`projects.md`)** — List of project cards; each card has an `id` + `data-rail` so it appears in the section rail.
 3. **Writing (`blog.md`)** — Reverse-chronological post list. First stub: "What is agentic and what is not".
+4. **CV (`cv.md`)** — Role/client centered; dates + tech stack live in margin notes beside each job.
 
 ## Design direction
 
-**Mono-minimalist hybrid**: monospace for UI / nav / headings / code; serif for long-form post body only. Light + dark via `prefers-color-scheme`.
+**Mono-minimalist marginalia**: monospace for UI / nav / headings / code; serif for long-form post body only. Light default + dark via the nav toggle (`data-theme` on `<html>`). The page reads as an annotated working file.
 
 - Type: system mono stack (`ui-monospace, "SF Mono", Menlo, Consolas, monospace`) for chrome; system serif (`ui-serif, Georgia, "Times New Roman", serif`) for post body.
 - Palette: 2–3 colors per mode. Background, foreground, one accent.
-- Layout: single column, ~640px content width, generous whitespace, no sidebar.
-- No animations beyond hover states. No carousels. No hero video.
-- One restrained "wow" element to consider later: subtle ASCII/typographic flourish on the home page — not now.
+- Layout: three-track grid on wide screens — `200px rail | 680px content | 220px margin notes`, ~1280px canvas, centered. Margin notes fold inline ≤1200px; single column ≤940px.
+- **Section rail** (the signature element): auto-built in `default.html` from `main h2[id]` and `[data-rail][id]` elements — a pipeline-style trace whose nodes fill with accent as sections scroll past. Hidden when a page has <2 sections. Don't add a second animated flourish; this is the one.
+- **Margin notes**: `<aside class="note">` floats into the right track (`.note-when` for the emphasized first line, `.note-stack` for a secondary line). Use them for metadata *about* adjacent content — dates, stacks, tl;drs, sidenotes — never decoration.
+- No other animation beyond hover states and the existing eye-tracking portrait / blinking cursor. Respect `prefers-reduced-motion`.
 
 ## Constraints / non-goals
 
@@ -60,7 +62,7 @@ Push to `main`. GitHub Pages auto-builds Jekyll. Enable in repo settings → Pag
 ## Local preview (optional)
 
 ```sh
-bundle exec jekyll serve
+PATH="/opt/homebrew/opt/ruby/bin:$PATH" bundle exec jekyll serve --livereload
 ```
 
-Requires Ruby + `bundle install` from a `Gemfile`. Not needed for deploy — only for local iteration.
+Requires Homebrew Ruby (system Ruby 2.6 is too old) + `bundle install`. Gems live in `vendor/bundle` (gitignored). Local preview uses current Jekyll 4.x, not the `github-pages` gem (its old native deps won't build here); production is still built by GitHub Pages. Not needed for deploy — only for local iteration.

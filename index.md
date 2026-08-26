@@ -4,7 +4,7 @@ title: Home
 ---
 
 <div class="identity" id="intro" data-rail="intro">
-  <aside class="note"><span class="note-when">tl;dr</span> Amsterdam · Deloitte · PhD in autonomous systems · ships AI end-to-end</aside>
+  <aside class="note"><span class="note-when">tl;dr</span> Amsterdam · Deloitte · experienced at AI use-case discovery, co-creation with stakeholders, and shipping AI end-to-end while working with a cross-functional team · PhD in knowledge-graph based reasoning · Always open to feedback and has growth mindset</aside>
   <div class="portrait">
     <div class="portrait-frame">
       <img class="face" src="{{ '/assets/img/yusha-portrait.jpg' | relative_url }}" alt="Yusha Kareem" width="220" height="270">
@@ -13,19 +13,19 @@ title: Home
     </div>
   </div>
   <div class="identity-text">
-    <p>Senior Data Scientist / AI Engineer who designs and ships AI systems end-to-end, from data pipeline to working interface, making deliberate component tradeoffs under commercial constraint and explaining the whole system to non-technical stakeholders. Backed by a PhD in Autonomous Systems and 7+ years across industry and academia; over the past 4 years at Deloitte, delivered diverse AI/ML projects spanning demand forecasting, computer-vision object detection and tracking, price optimization, and most recently, RAG-based document intelligence and grounded GenAI deliverable generation.<span class="cursor" aria-hidden="true"></span></p>
+    <p>Senior AI Engineer experienced with <strong>architecting and shipping GenAI/ML applications end-to-end. From use-case discovery, to minimum viable product, to production deployment.</strong> By leveraging <strong>Agile</strong> frameworks to accelerate product development alongside <strong>DevOps</strong> practices to automate and streamline continuous integration and delivery (CI/CD).</p>
+    <p>Backed by a <strong>PhD in 'Knowledge Graph based reasoning'</strong> and currently <strong>close to 5 years of industry experience at Deloitte, delivering diverse AI projects</strong> spanning GenAI, demand forecasting, products' price-optimization based on elasticities, and computer-vision based object detection and tracking.</p>
+    <p>Relevant expertise:</p>
+    <ul>
+      <li><strong>GenAI, Machine Learning and MLOps:</strong> Overall systems thinking experience and across diverse projects taking ownership of diverse aspects of the end-to-end delivery. For instance, architecture design, core modelling (selection of metrics, training, evaluation and inference), data preparation and quality checks, and dashboarding.</li>
+      <li><strong>Cross-functional delivery:</strong> Collaboration with business stakeholders, business analysts and data engineers to ship AI solutions; coached juniors when having a senior role on a project.</li>
+      <li><strong>Stakeholder management &amp; consulting:</strong> Use-cases discovery, scoping and translation of business requirements into concrete development goals. Communicating clearly with technical and non-technical audiences. Presenting work at learn and share events.<span class="cursor" aria-hidden="true"></span></li>
+    </ul>
   </div>
 </div>
 
-## now
+## currently
 
-<aside class="note"><span class="note-when">06/2026 – present</span><span class="note-stack">GCP · Gemini · Docling · RAG · Terraform</span></aside>
+<aside class="note"><span class="note-when">05/2026 – present</span><span class="note-stack">GCP · Gemini · Docling · RAG · Terraform</span></aside>
 
-Building a GenAI tool for Deloitte's SAP practice: it maps client documents onto Deloitte's methodology and drafts grounded, source-tied deliverables — an end-to-end RAG pipeline, parse to deploy. The full trail is on the [cv]({{ '/cv/' | relative_url }}).
-
-## elsewhere
-
-- [github](https://github.com/yushakareem) — code and experiments
-- [scholar](https://scholar.google.nl/citations?hl=nl&user=RoPfjkMAAAAJ) — publications from the PhD years
-- [linkedin](https://www.linkedin.com/in/s-y-k/) — profile
-- [email](mailto:syedyusha@gmail.com) — say hi
+Building a GenAI tool for Deloitte's SAP practice: it maps client documents onto Deloitte's methodology and drafts grounded, source-tied deliverables — an end-to-end RAG pipeline, parse to deploy. Details can be found on the [cv]({{ '/cv/' | relative_url }}).

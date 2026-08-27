@@ -50,7 +50,7 @@ Personal site for Yusha Kareem. Hosted on GitHub Pages at `https://yushakareem.g
 ## Constraints / non-goals
 
 - Don't add a JS framework (React, Next, Astro). If you reach for one, stop and reconsider.
-- Don't add analytics, cookie banners, or trackers.
+- Analytics: [GoatCounter](https://www.goatcounter.com/) only (`_layouts/default.html`, cookieless, no consent banner needed). Don't add anything heavier (Google Analytics, session recording/heatmaps, ad trackers) or a cookie banner.
 - Don't add a CSS framework (Tailwind, Bootstrap). One handwritten stylesheet.
 - Don't add custom fonts via CDN until the design is settled — system fonts first.
 - No custom domain. Stay on `yushakareem.github.io`.

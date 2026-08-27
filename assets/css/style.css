@@ -68,6 +68,7 @@ a:focus-visible {
 }
 .nav-brand-h1 { margin: 0; font: inherit; }
 .nav-brand { text-decoration: none; font-weight: 600; letter-spacing: -0.02em; }
+.brand-asterisk { color: var(--muted); font-weight: 400; margin-left: 0.05em; }
 .nav-links { list-style: none; display: flex; align-items: center; gap: 1.25rem; margin: 0; padding: 0; }
 .nav-links a { text-decoration: none; color: var(--muted); }
 .nav-links a:hover { color: var(--accent); }
@@ -262,6 +263,14 @@ pre code { background: none; padding: 0; }
 .project { padding: 1.25rem 0; border-bottom: 1px solid var(--rule); }
 .project h3 { margin: 0 0 0.35rem; font-size: 1rem; }
 .project p { margin: 0; color: var(--muted); }
+
+/* page footnote — pairs with the * next to the name on home */
+.page-footnote {
+  margin-top: 2.5rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+.page-footnote sup { margin-right: 0.15em; }
 
 /* footer */
 .footer {

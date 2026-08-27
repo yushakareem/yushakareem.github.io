@@ -29,3 +29,5 @@ title: Home
 <aside class="note"><span class="note-when">05/2026 – present</span><span class="note-stack">GCP · Gemini · Docling · RAG · Terraform</span></aside>
 
 Building a GenAI tool for Deloitte's SAP practice: it maps client documents onto Deloitte's methodology and drafts grounded, source-tied deliverables — an end-to-end RAG pipeline, parse to deploy. Details can be found on the [cv]({{ '/cv/' | relative_url }}).
+
+<p class="page-footnote"><sup>*</sup> eyes are watching the mouse pointer, if you're on a device with a mouse.</p>
